@@ -4,7 +4,7 @@ from requests.structures import CaseInsensitiveDict
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 app = Flask(__name__)
 
-url = "https://google.com"
+    # url = "https://google.com"
 
 # url = "https://eu-gb.event-notifications.cloud.ibm.com/event-notifications/v1/instances/0eb42def-21aa-4f0a-a975-0812ead6ceee/notifications"
 
@@ -27,9 +27,9 @@ url = "https://google.com"
 #     "ibmendefaultlong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
 #     "datacontenttype": "application/json")
 # }'
-resp = requests.get(url, headers=headers)
+# resp = requests.get(url, headers=headers)
 
-print(resp.status_code)
+# print(resp.status_code)
 
 @app.route('/')
 def index():
@@ -48,6 +48,9 @@ def hello():
    if name:
        print('Request for hello page received with name=%s' % name)
        return render_template('hello.html', name = name)
+       url = "https://google.com"
+       resp = requests.get(url, headers=headers)
+       print(resp.status_code)
    else:
        print('Request for hello page received with no name or blank name -- redirecting')
        return redirect(url_for('index'))
