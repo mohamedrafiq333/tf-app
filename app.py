@@ -27,8 +27,10 @@ headers["Authorization"] = "Bearer eyJraWQiOiIyMDIyMTExMjA4MjgiLCJhbGciOiJSUzI1N
 #     "ibmendefaultlong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
 #     "datacontenttype": "application/json")
 # }'
-
 resp = requests.get(url, headers=headers)
+
+print(resp.status_code)
+
 @app.route('/')
 def index():
    print('Request for index page received')
