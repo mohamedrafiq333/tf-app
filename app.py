@@ -1,4 +1,5 @@
 from datetime import datetime
+import requests
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 app = Flask(__name__)
 
@@ -19,6 +20,9 @@ def hello():
 
    if name:
        print('Request for hello page received with name=%s' % name)
+       url = "https://google.com"
+       resp = requests.get(url)
+       print(resp.status_code)
        return render_template('hello.html', name = name)
    else:
        print('Request for hello page received with no name or blank name -- redirecting')
